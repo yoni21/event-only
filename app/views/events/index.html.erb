@@ -1,0 +1,13 @@
+<h1> All Events for <%= @location.name %> </h1>
+<%= image_tag(@location.image) %>
+
+<% @events.each do |event| %>
+<h3>Event: <%= event.name %></h3>
+<p>Date: <%= event.date %></p>
+<p>Capacity: <%= event.capacity %></p>
+<% end %>
+
+
+<h3>
+  <%= link_to 'Back To All Locations', locations_path %>
+</h3>

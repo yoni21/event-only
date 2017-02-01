@@ -1,1 +1,10 @@
-events#show page
+<h1><%= @event.name %>: <%= @event.date %></h1>
+
+
+<p> <%= link_to 'Edit This Event', edit_location_event_path %> <p>
+<p> <%= link_to 'Delete This Event', location_event_path, method: :delete, data: {confirm: "Are you sure you want to delete the location '#{@location.name}'? This cannot be undone!"} %> <p>
+<p> <%= link_to 'Create New Event', new_location_event_path %> </p>
+
+<h3><%= link_to 'New Event', new_location_event_path(@location) %></h3>
+
+<h2><%= link_to 'Events', location_events_path(@location) %></h2>

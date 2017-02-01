@@ -1,4 +1,11 @@
-
 <h1><%= @location.name %></h1>
 
-<%= render 'location', location: @location %>
+<p> <%= link_to 'Edit This Location', edit_location_path %> <p>
+<p> <%= link_to 'Delete This Location', location_path, method: :delete, data: {confirm: "Are you sure you want to delete the location '#{@location.name}'? This cannot be undone!"} %> <p>
+<p> <%= link_to 'Create New Location', new_location_path %> </p>
+
+<%= render @location %>
+
+<h3><%= link_to 'New Event', new_location_event_path(@location) %></h3>
+
+<h2><%= link_to 'Events', location_events_path(@location) %></h2>
